@@ -36,4 +36,6 @@ Route::group(['middleware'=>'admin'], function(){
 
     // order section
     Route::post('/order/place', [OrderController::class, 'placeOrder']);
+    Route::get('/get-order-view', [OrderController::class, 'orderView']);
+    Route::get('/view-order-item/{id}', [OrderController::class, 'orderListView']);
 });

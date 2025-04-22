@@ -54,4 +54,19 @@ class OrderController extends Controller
         session()->forget('cart');
         return redirect()->back()->with('success', 'Your order is confirmed!');
     }
+
+    public function orderView()
+    {
+        $order = Order::with('user')->get();
+        $orderItem = OrderItem::all();
+        // dd($order, $orderItem, $product);
+        return view('order.orderView', compact('order'));
+    }
+
+    public function orderListView($id)
+    {
+        $orderItem = OrderItem::where('orderid', $id)->get();
+        $order = Order::with('user')->get();
+        return view('order.orderListView', compact('orderItem','order'));
+    }
 }

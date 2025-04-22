@@ -21,5 +21,10 @@ class Admin extends Authenticatable
         'departmentId',
         'status',
         'role',
-        ];
+    ];
+
+    public function order()
+    {
+        return $this->hasMany(Admin::class, 'userId', 'id');
+    }
 }

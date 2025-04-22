@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2025 at 01:05 PM
+-- Generation Time: Apr 22, 2025 at 01:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -124,7 +124,8 @@ INSERT INTO `orders` (`id`, `userId`, `total`, `status`, `date`, `created_at`, `
 (4, 6, 228.00, 'pending', '2025-04-22', '2025-04-22 04:43:54', '2025-04-22 04:43:54'),
 (5, 6, 912.00, 'pending', '2025-04-22', '2025-04-22 04:46:52', '2025-04-22 04:46:52'),
 (6, 6, 1844.00, 'pending', '2025-04-22', '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
-(7, 6, 260.00, 'pending', '2025-04-22', '2025-04-22 05:02:40', '2025-04-22 05:02:40');
+(7, 6, 260.00, 'pending', '2025-04-22', '2025-04-22 05:02:40', '2025-04-22 05:02:40'),
+(8, 5, 3711.00, 'pending', '2025-04-22', '2025-04-22 05:52:56', '2025-04-22 05:52:56');
 
 -- --------------------------------------------------------
 
@@ -162,7 +163,11 @@ INSERT INTO `order_items` (`id`, `orderId`, `productId`, `name`, `qty`, `price`,
 (11, 6, 2, 'Butter', 2, 150.00, 0.00, '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
 (12, 6, 5, 'Tomato Such', 4, 380.00, 0.00, '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
 (13, 7, 4, 'Orange Juice', 1, 228.00, 5.00, '2025-04-22 05:02:40', '2025-04-22 05:02:40'),
-(14, 7, 3, 'Green Ful Kofi', 4, 8.00, 0.00, '2025-04-22 05:02:40', '2025-04-22 05:02:40');
+(14, 7, 3, 'Green Ful Kofi', 4, 8.00, 0.00, '2025-04-22 05:02:40', '2025-04-22 05:02:40'),
+(15, 8, 2, 'Butter', 1, 150.00, 0.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56'),
+(16, 8, 3, 'Green Ful Kofi', 1, 8.00, 0.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56'),
+(17, 8, 4, 'Orange Juice', 1, 228.00, 5.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56'),
+(18, 8, 6, 'Mixed Vasitble', 4, 831.25, 5.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56');
 
 -- --------------------------------------------------------
 
@@ -340,13 +345,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

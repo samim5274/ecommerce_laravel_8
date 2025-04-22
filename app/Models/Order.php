@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Admin;
 
 class Order extends Model
 {
@@ -15,4 +16,9 @@ class Order extends Model
         'status',
         'date'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(Admin::class, 'userId', 'id');
+    }
 }
