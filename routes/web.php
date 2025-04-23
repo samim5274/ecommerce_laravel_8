@@ -22,6 +22,7 @@ Route::get('/user-login-backend', [ManagerController::class, 'loginUser']);
 
 Route::group(['middleware'=>'admin'], function(){
     Route::get('/dashboard', [ManagerController::class, 'dashboard'])->name('dashboard-view');
+    Route::get('/logout', [ManagerController::class, 'logout']);
 
     Route::get('/add-product-view', [ProductController::class, 'addProductView'])->name('add-product-view');
     Route::post('/add-product', [ProductController::class, 'addProduct']);

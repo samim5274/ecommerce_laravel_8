@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2025 at 01:53 PM
+-- Generation Time: Apr 22, 2025 at 08:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,12 +48,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `photo`, `phone`, `address`, `dob`, `departmentId`, `role`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Shamim Hossain', 'samim@gmail.com', '$2y$10$Q3ef2a6IXyBJ4GTg1OChTObnquGhPfRXNh8dn2KUfvJGLW.AyR1gC', NULL, '123456789', 'Dhaka', '2025-04-20', 1, 0, 0, '2025-04-20 05:57:49', '2025-04-20 05:57:49'),
-(2, 'Muhaiminul Islam', 'mohaiminul@gmail.com', '$2y$10$6hLlVrXcEthNwWLa0T7A8uumDScK8LptdB2Xxio8Adua7VhRllHXq', NULL, '123456789', 'Dhaka', '2025-04-20', 1, 0, 0, '2025-04-20 05:59:02', '2025-04-20 05:59:02'),
-(3, 'Akbor Hossain', 'akbor@gmail.com', '$2y$10$71nCi43Du2RsTPxS.H6YI.RdtYzA9Fi6RConDWbXgNdPsS5DqSyUG', NULL, '123456789', 'Dhaka', '2025-04-21', 1, 0, 0, '2025-04-20 23:16:02', '2025-04-20 23:16:02'),
-(4, 'Shamim Hossain', 'samim@gamil.com', '$2y$10$Ykn.fDYiEsm3.gxRk45uU.eGh71tNxGO.3PLotnu6ewhsijdRClhm', NULL, '123456789', 'Dhaka', '2025-04-21', 1, 0, 0, '2025-04-21 07:14:01', '2025-04-21 07:14:01'),
-(5, 'Shamim Hossain', 'samim1@gmail.com', '$2y$10$neLAW.JodELkbt3ZluaHOepOfNm6EnRfKQNMViN.wpKtI7BRrGXdm', NULL, '123456789', 'Dhaka', '2025-04-21', 1, 0, 0, '2025-04-21 11:18:22', '2025-04-21 11:18:22'),
-(6, 'Shamim', 'asdf@gmail.com', '$2y$10$7lLxcYPvn/Mv2uAXxPq7gO5oYmds3wUOOgE7Keqf2.LDXGfON08c6', NULL, '123456789', 'Dhaka', '2025-04-22', 1, 0, 0, '2025-04-22 03:05:59', '2025-04-22 03:05:59');
+(7, 'Shamim Hossen', 'samim@gamil.com', '$2y$10$udiLhUumHqns5HECEvp79uxoAW/2WvDYRJL.dnLaml9GL6zRIJBlO', NULL, '123456789', 'Dhaka', '2025-04-22', 1, 0, 0, '2025-04-22 10:34:05', '2025-04-22 10:34:05');
 
 -- --------------------------------------------------------
 
@@ -118,14 +113,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `userId`, `total`, `status`, `date`, `created_at`, `updated_at`) VALUES
-(1, 6, 1650.00, 'pending', '2025-04-22', '2025-04-22 04:06:04', '2025-04-22 04:06:04'),
-(2, 6, 1650.00, 'pending', '2025-04-22', '2025-04-22 04:06:20', '2025-04-22 04:06:20'),
-(3, 6, 628.00, 'pending', '2025-04-22', '2025-04-22 04:08:24', '2025-04-22 04:08:24'),
-(4, 6, 228.00, 'pending', '2025-04-22', '2025-04-22 04:43:54', '2025-04-22 04:43:54'),
-(5, 6, 912.00, 'pending', '2025-04-22', '2025-04-22 04:46:52', '2025-04-22 04:46:52'),
-(6, 6, 1844.00, 'pending', '2025-04-22', '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
-(7, 6, 260.00, 'pending', '2025-04-22', '2025-04-22 05:02:40', '2025-04-22 05:02:40'),
-(8, 5, 3711.00, 'pending', '2025-04-22', '2025-04-22 05:52:56', '2025-04-22 05:52:56');
+(9, 7, 1217.25, 'pending', '2025-04-22', '2025-04-22 10:49:32', '2025-04-22 10:49:32');
 
 -- --------------------------------------------------------
 
@@ -150,24 +138,9 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `orderId`, `productId`, `name`, `qty`, `price`, `discount`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Butter', 1, 150.00, 0.00, '2025-04-22 04:06:04', '2025-04-22 04:06:04'),
-(2, 1, 1, 'Fruts', 1, 1500.00, 0.00, '2025-04-22 04:06:04', '2025-04-22 04:06:04'),
-(3, 2, 1, 'Fruts', 1, 1500.00, 0.00, '2025-04-22 04:06:20', '2025-04-22 04:06:20'),
-(4, 2, 2, 'Butter', 1, 150.00, 0.00, '2025-04-22 04:06:20', '2025-04-22 04:06:20'),
-(5, 3, 5, 'Tomato Such', 1, 380.00, 0.00, '2025-04-22 04:08:24', '2025-04-22 04:08:24'),
-(6, 3, 4, 'Orange Juice', 1, 240.00, 0.00, '2025-04-22 04:08:24', '2025-04-22 04:08:24'),
-(7, 3, 3, 'Green Ful Kofi', 1, 8.00, 0.00, '2025-04-22 04:08:24', '2025-04-22 04:08:24'),
-(8, 4, 4, 'Orange Juice', 1, 228.00, 5.00, '2025-04-22 04:43:54', '2025-04-22 04:43:54'),
-(9, 5, 4, 'Orange Juice', 4, 228.00, 5.00, '2025-04-22 04:46:52', '2025-04-22 04:46:52'),
-(10, 6, 3, 'Green Ful Kofi', 3, 8.00, 0.00, '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
-(11, 6, 2, 'Butter', 2, 150.00, 0.00, '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
-(12, 6, 5, 'Tomato Such', 4, 380.00, 0.00, '2025-04-22 04:49:47', '2025-04-22 04:49:47'),
-(13, 7, 4, 'Orange Juice', 1, 228.00, 5.00, '2025-04-22 05:02:40', '2025-04-22 05:02:40'),
-(14, 7, 3, 'Green Ful Kofi', 4, 8.00, 0.00, '2025-04-22 05:02:40', '2025-04-22 05:02:40'),
-(15, 8, 2, 'Butter', 1, 150.00, 0.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56'),
-(16, 8, 3, 'Green Ful Kofi', 1, 8.00, 0.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56'),
-(17, 8, 4, 'Orange Juice', 1, 228.00, 5.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56'),
-(18, 8, 6, 'Mixed Vasitble', 4, 831.25, 5.00, '2025-04-22 05:52:56', '2025-04-22 05:52:56');
+(20, 9, 2, 'Butter', 1, 150.00, 0.00, '2025-04-22 10:49:32', '2025-04-22 10:49:32'),
+(21, 9, 4, 'Orange Juice', 1, 228.00, 5.00, '2025-04-22 10:49:32', '2025-04-22 10:49:32'),
+(22, 9, 6, 'Mixed Vasitble', 1, 831.25, 5.00, '2025-04-22 10:49:32', '2025-04-22 10:49:32');
 
 -- --------------------------------------------------------
 
@@ -327,7 +300,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -345,13 +318,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

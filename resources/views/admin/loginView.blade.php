@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	
+
 @include('layouts.message')
 
 	<section class="h-100">
@@ -26,7 +26,7 @@
 							<form method="GET" action="/user-login-backend" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="txtEmail" value="" required autofocus>
+									<input id="email" value="samim@gamil.com" type="email" class="form-control" name="txtEmail" value="" required autofocus>
 									<div class="invalid-feedback">
 										Email is invalid
 									</div>
@@ -39,7 +39,7 @@
 											Forgot Password?
 										</a>
 									</div>
-									<input id="password" type="password" class="form-control" name="txtPassword" required>
+									<input id="password" value="123456789" type="password" class="form-control" name="txtPassword" required>
 								    <div class="invalid-feedback">
 								    	Password is required
 							    	</div>

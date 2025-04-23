@@ -17,6 +17,12 @@ class ManagerController extends Controller
         return view('admin.loginView');
     }
 
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.loginView');
+    }
+
     public function userCreateView()
     {
         return view('admin.userCreateView');
