@@ -79,19 +79,33 @@
             <table class="table table-bordered table-striped mt-4 table-responsive">
               <thead class="table-dark">
                   <tr>
-                      <th scope="col">User</th>
-                      <th scope="col">Total Name</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Date</th>
+                    <th scope="col" class="text-left">Date</th>
+                    <th scope="col" >User</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col" class="text-center">Status</th>
                   </tr>
               </thead>
               <tbody>
-                  @foreach ($order as $val)
-                      <tr>
-                          <td><a href="{{url('/view-order-item/'.$val->id)}}">{{ $val->user->name }}</td></a>
-                          <td>{{ $val->total }}</td>
-                          <td><span class="badge bg-warning">{{ $val->status }}</span></td>
-                          <td>{{ $val->date }}</td>
+                  @foreach ($orders as $val)
+                  <tr>
+                        <td class="text-left">{{ $val->date }}</td>
+                        <td><a href="{{url('/view-order-item/'.$val->id)}}">{{ $val->user->name }}</td></a>
+                        <td>${{ $val->total }}/-</td>
+                        @php
+                            $statusColors = [
+                                'pending' => 'bg-warning text-dark',
+                                'in_progress' => 'bg-info text-dark',
+                                'shipped' => 'bg-primary',
+                                'delivered' => 'bg-success',
+                                'cancelled' => 'bg-danger',
+                                'returned' => 'bg-secondary',
+                                'refunded' => 'bg-dark',
+                                'completed' => 'bg-success',
+                            ];
+
+                            $badgeClass = $statusColors[$val->status] ?? 'bg-light text-dark';
+                        @endphp
+                        <td class="text-center"><a href="{{url('/order-status-view/'.$val->id)}}"><span class="badge {{ $badgeClass }}">{{ ucfirst(str_replace('_', ' ', $val->status)) }}</span></a></td>
                       </tr>
                   @endforeach
               </tbody>

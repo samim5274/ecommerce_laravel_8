@@ -73,18 +73,33 @@
   <div class="content">
     <div class="container-fluid">
       @include('layouts.message')
+        <div style="text-align: center; margin: 0 0 20px 0; padding: 0;">
+            <h1 style="margin: 0;">Ecommerce Management System</h1>
+            <p style="margin: 2px 0;">Address: 1234 Example Street, City, Country</p>
+            <p style="margin: 2px 0;">Phone: +123 456 7890</p>
+            <p style="margin: 2px 0;">Email: info@mycompany.com</p>
+        </div>
         <div class="mt-5">
             <h1 class="text-center mb-4">Order List</h1>
+            <div class="row">
+              <div class="col-md-2">
+                <a href="{{url('/get-order-view')}}" class="btn btn-primary w-100"><i class="bi bi-arrow-left"></i> Back</a>
+              </div>    
+              <div class="col-md-2">
+                <a href="{{url('/download-order-list/'.$orderItem->first()->orderId)}}" target="_blank"><button class="btn btn-warning w-100"><i class="bi bi-download"></i> Print</button></a>
+              </div>
+            </div>
+            <hr>
+
             <table class="table table-bordered table-hover order-table">
                 <thead class="table-light">
                     <tr>
                         <th>#</th>
                         <th>Order ID</th>
-                        <th>Customer</th>
                         <th>Product</th>
-                        <th>Qty</th>
-                        <th>Discount</th>
-                        <th>Total Amount</th>
+                        <th class="text-center">Qty</th>
+                        <th class="text-center">Discount</th>
+                        <th class="text-center">Total Amount</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,18 +107,16 @@
                     <tr>
                         <td>{{ ++$key}}</td>
                         <td>{{ $val->orderId }}</td>
-                        <td>{{ $val->productId }}</td>
                         <td>{{ $val->name }}</td>
-                        <td>{{ $val->qty }}</td>
-                        <td>{{ $val->discount }}</td>
-                        <td>{{ $val->price }}</td>
+                        <td class="text-center">{{ $val->qty }}</td>
+                        <td class="text-center">{{ $val->discount }}</td>
+                        <td class="text-center">{{ $val->price }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-        </div>
+        </div>        
     </div>
-
 </div>
 
 

@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Session;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrderController extends Controller
 {
@@ -57,16 +58,37 @@ class OrderController extends Controller
 
     public function orderView()
     {
-        $order = Order::with('user')->get();
-        $orderItem = OrderItem::all();
-        // dd($order, $orderItem, $product);
-        return view('order.orderView', compact('order'));
+        $orders = Order::with('user')->get();
+        return view('order.orderView', compact('orders'));
     }
 
     public function orderListView($id)
     {
         $orderItem = OrderItem::where('orderid', $id)->get();
-        $order = Order::with('user')->get();
+        $order = Order::with('user')->where('id', $id)->get();
         return view('order.orderListView', compact('orderItem','order'));
+    }
+
+    public function statusView($id)
+    {
+        $orders = Order::with('user')->where('id', $id)->get();
+        return view('order.orderStatusView', compact('orders'));
+    }
+
+    public function statusUpdate(Request $request, $id)
+    {
+        $orders = Order::with('user')->get();
+        $order = Order::find($id);
+        $order->status = $request->input('status','pending');
+        $order->save();
+        return view('order.orderView', compact('orders'))->with('success', 'Order status updated successfully!');
+    }
+
+    public function downloadOrderList($id)
+    {
+        $order = Order::where('id', $id)->with('user')->get();
+        $orderItem = OrderItem::where('orderid', $id)->get();
+        $pdf = PDF::loadView('order.downloadOrderList', compact('orderItem','order'));
+        return $pdf->stream('order-list.pdf');
     }
 }

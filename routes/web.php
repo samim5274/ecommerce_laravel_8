@@ -38,5 +38,9 @@ Route::group(['middleware'=>'admin'], function(){
     // order section
     Route::post('/order/place', [OrderController::class, 'placeOrder']);
     Route::get('/get-order-view', [OrderController::class, 'orderView']);
+    Route::get('/order-status-view/{id}', [OrderController::class, 'statusView']);
+    Route::post('/update-order-status/{id}', [OrderController::class, 'statusUpdate']);
     Route::get('/view-order-item/{id}', [OrderController::class, 'orderListView']);
+    // download order list
+    Route::get('/download-order-list/{id}', [OrderController::class, 'downloadOrderList']);
 });
